@@ -1,0 +1,28 @@
+{
+  "name": "gilded-rose-kata",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gilded-rose.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/gilded-rose.js",
+    "dev": "tsc --watch",
+    "lint": "ts-standard",
+    "lint:fix": "ts-standard --fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-standard": "^12.0.2",
+    "typescript": "^5.8.3"
+  },
+  "ts-standard": {
+    "project": "tsconfig.json",
+    "ignore": [
+      "dist",
+      "src/before",
+      "**/*.js"
+    ]
+  }
+}
