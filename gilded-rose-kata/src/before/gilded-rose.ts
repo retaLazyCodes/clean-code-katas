@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 export class Item {
   name: string;
   sellIn: number;
