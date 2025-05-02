@@ -5,7 +5,6 @@
   "main": "gilded-rose.js",
   "scripts": {
     "build": "tsc",
-    "start": "node dist/gilded-rose.js",
     "dev": "tsc --watch",
     "lint": "ts-standard",
     "lint:fix": "ts-standard --fix",

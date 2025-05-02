@@ -20,5 +20,5 @@ El objetivo de este ejercicio es mejorar la legibilidad, mantenibilidad y extens
 
 ```bash
 npm install
-npm run dev
+npm run test
 ```
