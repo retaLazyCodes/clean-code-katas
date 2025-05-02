@@ -45,6 +45,7 @@ export class UpdatableItemFactory {
     static readonly AGED_BRIE: string = "Aged Brie";
     static readonly BACKSTAGE_PASSES: string = "Backstage passes to a TAFKAL80ETC concert";
     static readonly SULFURAS: string = "Sulfuras, Hand of Ragnaros";
+    static readonly CONJURED: string = "Conjured Mana Cake";
 
     public static getItem( item: Item): UpdatableItem {
         switch (item.name) {
@@ -54,6 +55,8 @@ export class UpdatableItemFactory {
                 return new BackstagePasses(item);
             case UpdatableItemFactory.SULFURAS:
                 return new Sulfuras(item);
+            case UpdatableItemFactory.CONJURED:
+                return new Conjured(item);
             default:
                 return new NormalItem(item);
         }
@@ -85,7 +88,7 @@ export class AgedBrie extends UpdatableItem {
         super(item);
     }
 
-    update(): void {
+    override update(): void {
         super.decreaseSellIn();
         super.increaseQuality();
 
@@ -100,7 +103,7 @@ export class Sulfuras extends UpdatableItem {
         super(item);
     }
 
-    update(): void {
+    override update(): void {
         return;
     }
 }
@@ -114,7 +117,7 @@ export class BackstagePasses extends UpdatableItem {
         super(item);
     }
 
-    update(): void {
+    override update(): void {
         super.decreaseSellIn();
         super.increaseQuality();
 
@@ -126,6 +129,29 @@ export class BackstagePasses extends UpdatableItem {
         }
         if (this.sellIn <= this.QUALITY_RESET_SELL_IN_THRESHOLD) {
             super.resetQuality();
+        }
+    }
+}
+
+export class Conjured extends UpdatableItem {
+    private DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD: number = 0;
+
+    constructor(item: Item) {
+        super(item);
+    }
+
+    override update(): void {
+        super.decreaseSellIn();
+        this.decreaseQuality();
+
+        if (this.sellIn < this.DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD) {
+            this.decreaseQuality();
+        }
+    }
+
+    override decreaseQuality(): void {
+        if (this.quality > UpdatableItem.MIN_QUALITY) {
+            this.quality = Math.max(this.quality - 2, UpdatableItem.MIN_QUALITY);
         }
     }
 }

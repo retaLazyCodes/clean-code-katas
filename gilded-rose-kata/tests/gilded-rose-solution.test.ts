@@ -136,4 +136,40 @@ describe('Gilded Rose', () => {
         expect(backstagePasses.quality).toBeLessThanOrEqual(50)
     })
   })
+
+  describe('Conjured Items', () => {
+    it('should degrade quality by 2 before sellIn date', () => {
+      const item = new Item('Conjured Mana Cake', 5, 10);
+      const conjuredItem = UpdatableItemFactory.getItem(item);
+      const gildedRose = new GildedRose();
+
+      gildedRose.updateQuality([conjuredItem]);
+
+      expect(conjuredItem.quality).toBe(8);
+      expect(conjuredItem.sellIn).toBe(4);
+    });
+
+    it('should degrade quality by 4 after sellIn date', () => {
+      const item = new Item('Conjured Mana Cake', 0, 10);
+      const conjuredItem = UpdatableItemFactory.getItem(item);
+      const gildedRose = new GildedRose();
+
+      gildedRose.updateQuality([conjuredItem]);
+
+      expect(conjuredItem.quality).toBe(6);
+      expect(conjuredItem.sellIn).toBe(-1);
+    });
+
+    it('should not reduce quality below 0', () => {
+      const item = new Item('Conjured Mana Cake', 0, 3);
+      const conjuredItem = UpdatableItemFactory.getItem(item);
+      const gildedRose = new GildedRose();
+
+      gildedRose.updateQuality([conjuredItem]);
+
+      expect(conjuredItem.quality).toBe(0);
+      expect(conjuredItem.sellIn).toBe(-1);
+    });
+  });
+
 })
