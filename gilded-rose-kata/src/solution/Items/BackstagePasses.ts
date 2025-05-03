@@ -1,5 +1,5 @@
-import {Item} from "./Item";
-import {ItemName, ItemQuality, ItemSellIn} from "../vo";
+import { Item } from './Item';
+import { ItemName, ItemQuality, ItemSellIn } from '../vo';
 
 export class BackstagePasses extends Item {
     private readonly DOUBLE_QUALITY_INCREASE_SELL_IN_THRESHOLD: number = 10;

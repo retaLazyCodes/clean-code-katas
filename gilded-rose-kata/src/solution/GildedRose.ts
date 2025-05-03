@@ -1,8 +1,7 @@
-import {Item} from "./Items";
+import { Item } from './Items';
 
 export class GildedRose {
-
-    updateQuality(items = [] as Array<Item>) {
+    updateQuality(items = [] as Item[]): void {
         items.forEach((item: Item) => item.update());
     }
 }

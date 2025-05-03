@@ -1,5 +1,5 @@
-import {Item} from "./Item";
-import {ItemName, ItemQuality, ItemSellIn} from "../vo";
+import { Item } from './Item';
+import { ItemName, ItemQuality, ItemSellIn } from '../vo';
 
 export class Sulfuras extends Item {
     public constructor(name: ItemName, sellIn: ItemSellIn, quality: ItemQuality) {
@@ -7,6 +7,6 @@ export class Sulfuras extends Item {
     }
 
     override update(): void {
-        return;
+
     }
 }

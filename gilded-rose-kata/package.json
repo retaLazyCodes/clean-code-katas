@@ -8,7 +8,7 @@
     "dev": "tsc --watch",
     "start": "npm run build && node dist/solution/main.js",
     "lint": "ts-standard",
-    "lint:fix": "ts-standard --fix",
+    "lint:fix": "eslint . --ext .ts --fix",
     "test": "jest"
   },
   "keywords": [],

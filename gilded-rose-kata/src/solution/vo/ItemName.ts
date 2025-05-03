@@ -1,10 +1,10 @@
 export class ItemName {
     private readonly value: string;
 
-    static readonly AGED_BRIE: string = "Aged Brie";
-    static readonly BACKSTAGE_PASSES: string = "Backstage passes to a TAFKAL80ETC concert";
-    static readonly SULFURAS: string = "Sulfuras, Hand of Ragnaros";
-    static readonly CONJURED: string = "Conjured Mana Cake";
+    static readonly AGED_BRIE: string = 'Aged Brie';
+    static readonly BACKSTAGE_PASSES: string = 'Backstage passes to a TAFKAL80ETC concert';
+    static readonly SULFURAS: string = 'Sulfuras, Hand of Ragnaros';
+    static readonly CONJURED: string = 'Conjured Mana Cake';
 
     constructor(value: string) {
         this.value = value;

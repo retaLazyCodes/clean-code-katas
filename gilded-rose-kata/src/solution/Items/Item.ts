@@ -1,4 +1,4 @@
-import {ItemName, ItemQuality, ItemSellIn} from "../vo";
+import { ItemName, ItemQuality, ItemSellIn } from '../vo';
 
 export abstract class Item {
     public name: ItemName;
@@ -6,7 +6,7 @@ export abstract class Item {
     public quality: ItemQuality;
 
     public constructor(name: ItemName, sellIn: ItemSellIn, quality: ItemQuality) {
-        this.name =  name;
+        this.name = name;
         this.sellIn = sellIn;
         this.quality = quality;
     }
@@ -33,11 +33,11 @@ export abstract class Item {
         this.quality = this.quality.reset();
     }
 
-    protected canDecreaseQuality() {
+    protected canDecreaseQuality(): boolean {
         return this.quality.canDecrease();
     }
 
-    public toString() {
-        return this.name + ", " + this.sellIn + ", " + this.quality;
+    public toString(): string {
+        return this.name.toString() + ', ' + this.sellIn.toString() + ', ' + this.quality.toString();
     }
 }

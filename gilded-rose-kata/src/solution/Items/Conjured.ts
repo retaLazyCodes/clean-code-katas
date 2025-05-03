@@ -1,5 +1,5 @@
-import {Item} from "./Item";
-import {ItemName, ItemQuality, ItemSellIn} from "../vo";
+import { Item } from './Item';
+import { ItemName, ItemQuality, ItemSellIn } from '../vo';
 
 export class Conjured extends Item {
     private readonly DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD: number = 0;

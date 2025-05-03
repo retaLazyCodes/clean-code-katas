@@ -1,5 +1,3 @@
-import {Item} from "../Items";
-
 export class ItemQuality {
     private readonly value: number;
 

@@ -13,9 +13,8 @@ import {
     ItemQuality
 } from './vo';
 
-
+// eslint-disable-next-line @typescript-eslint/no-extraneous-class
 export class ItemFactory {
-
     public static basedOn(rawName: string, rawSellIn: number, rawQuality: number): Item {
         const name = new ItemName(rawName);
         const sellIn = new ItemSellIn(rawSellIn);
