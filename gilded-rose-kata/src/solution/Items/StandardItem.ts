@@ -1,0 +1,19 @@
+import {Item} from "./Item";
+import {ItemName, ItemQuality, ItemSellIn} from "../vo";
+
+export class StandardItem extends Item {
+    private readonly DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD: number = 0;
+
+    public constructor(name: ItemName, sellIn: ItemSellIn, quality: ItemQuality) {
+        super(name, sellIn, quality);
+    }
+
+    override update(): void {
+        super.decreaseSellIn();
+        super.decreaseQuality();
+
+        if (this.hasToBeSoldInLessThan(this.DOUBLE_QUALITY_DECREASE_SELL_IN_THRESHOLD)) {
+            super.decreaseQuality();
+        }
+    }
+}

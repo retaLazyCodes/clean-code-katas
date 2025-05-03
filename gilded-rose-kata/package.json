@@ -2,10 +2,11 @@
   "name": "gilded-rose-kata",
   "version": "1.0.0",
   "description": "",
-  "main": "gilded-rose.js",
+  "main": "main.js",
   "scripts": {
     "build": "tsc",
     "dev": "tsc --watch",
+    "start": "npm run build && node dist/solution/main.js",
     "lint": "ts-standard",
     "lint:fix": "ts-standard --fix",
     "test": "jest"

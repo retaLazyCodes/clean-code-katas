@@ -20,5 +20,6 @@ El objetivo de este ejercicio es mejorar la legibilidad, mantenibilidad y extens
 
 ```bash
 npm install
-npm run test
+npm run test # ejecutar tests
+npm start # ejecutar app CLI
 ```
